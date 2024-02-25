@@ -1,0 +1,75 @@
+﻿<Window x:Class="TicTacToe_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe_WPF"
+        mc:Ignorable="d"
+        Title="TicTacToe 2024" Height="500" Width="380"
+        ResizeMode="NoResize"
+        WindowState="Normal">
+
+    <Grid>
+        <Menu>
+            <MenuItem Header="Datei">
+                <MenuItem Header="Beenden" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Bearbeiten">
+                <MenuItem Header="Neu" Click="Refresh_Click"/>
+            </MenuItem>
+            <MenuItem Header="Hilfe">
+                <MenuItem Header="Technischer Support" Click="Info_Click"/>
+                <MenuItem Header="Spielanleitung" Click="Howto_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Grid-Element für das Tic Tac Toe-Spielfeld -->
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <!-- Zeile für das StackPanel -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Buttons für das Spielfeld -->
+            <Button Grid.Row="0" Grid.Column="0" Name="btn00" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="0" Grid.Column="1" Name="btn01" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="0" Grid.Column="2" Name="btn02" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="1" Grid.Column="0" Name="btn03" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="1" Grid.Column="1" Name="btn04" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="1" Grid.Column="2" Name="btn05" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="2" Grid.Column="0" Name="btn06" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="2" Grid.Column="1" Name="btn07" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+            <Button Grid.Row="2" Grid.Column="2" Name="btn08" FontWeight="Bold" FontSize="74" Click="Button_Click"/>
+
+            <!-- Spielerstatus und Spielmodus -->
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal">
+                <!-- GroupBox für Spielerstatus -->
+                <GroupBox Header="Spielstand" Margin="5" BorderBrush="Black">
+                    <StackPanel Orientation="Vertical">
+                        <!-- Spielerstatus anzeigen -->
+                        <TextBlock Name="textBlockPlayer1" Text="Spieler X : 0" Margin="3" TextAlignment="Center" FontSize="12"/>
+                        <TextBlock Name="textBlockPlayer2" Text="Spieler O : 0" Margin="3" TextAlignment="Center" FontSize="12"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- GroupBox für Spielmodus -->
+                <GroupBox Header="Spielmodus" Margin="5" BorderBrush="Black">
+                    <StackPanel Orientation="Vertical">
+                        <!-- Auswahl des Spielmodus -->
+                        <RadioButton Content="Spieler vs. Spieler" Margin="5" Checked="RadioButton_PlayerVsPlayer_Checked" IsChecked="True"/>
+                        <RadioButton Content="Spieler vs. Computer" Margin="5" Checked="RadioButton_PlayerVsComputer_Checked"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>
