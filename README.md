@@ -4,8 +4,8 @@ the game TicTacToe implemented as a modern C#.NET WPF project
 
 Hier ist ein Screenshot meiner Anwendung:
 
-![Screenshot](screenshots/screen1.jpg)
-![Screenshot](screenshots/screen2.jpg)
-![Screenshot](screenshots/screen3.jpg)
-![Screenshot](screenshots/screen4.jpg)
+![Screenshot](screen1.jpg)
+![Screenshot](screen2.jpg)
+![Screenshot](screen3.jpg)
+![Screenshot](screen4.jpg)
 
